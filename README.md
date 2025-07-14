@@ -1,100 +1,88 @@
-# Reddit Capture Chrome Extension
+# Reddit Content Extractor Chrome Extension
 
-Một Chrome Extension V3 để capture nội dung trên Reddit với button floating tiện lợi.
+A Chrome Extension Manifest V3 that helps extract and export Reddit content in multiple formats - JSON, Markdown, and Copy to Clipboard.
 
-## ✨ Tính năng
+## 🎯 Main Features
 
-- 🎯 Chỉ hoạt động trên trang web Reddit (https://www.reddit.com/)
-- 📷 Button tròn floating ở góc phải dưới màn hình
-- 🔍 Click để hiển thị title của trang web hiện tại
-- 🎨 Giao diện đẹp mắt với hiệu ứng hover
+### **3 Floating Buttons on Reddit:**
+- **📋 Copy Button** (Green) - Copy Markdown to clipboard
+- **MD Button** (Blue) - Download Markdown file (.md)  
+- **JSON Button** (Orange) - Download JSON file (.json)
 
-## 🚀 Cách cài đặt
+### **Extracted Data:**
+- ✅ **Title** of Reddit post
+- ✅ **Content** main content of the post
+- ✅ **Comments** with full hierarchical structure (nested replies)
+- ✅ **Author** of each comment and reply
+- ✅ **Hierarchical structure** - Preserves original comment tree structure
 
-1. **Mở Chrome và truy cập Extensions**
-   - Mở Chrome
-   - Gõ `chrome://extensions/` trên thanh địa chỉ
-   - Hoặc Menu → More Tools → Extensions
+## 🚀 Extension Installation Guide
 
-2. **Bật Developer Mode**
-   - Bật switch "Developer mode" ở góc phải trên
+### **Step 1: Preparation**
+1. Download or clone this project to your computer
+2. Ensure you have a folder containing these files:
+   ```
+   reddit-extension/
+   ├── manifest.json
+   ├── content.js
+   ├── styles.css
+   ├── popup.html
+   ├── icons/
+   └── README.md
+   ```
 
-3. **Load Extension**
-   - Click "Load unpacked"
-   - Chọn thư mục chứa project này
-   - Extension sẽ được cài đặt và xuất hiện trong danh sách
+### **Step 2: Open Chrome Extensions**
+1. Open **Google Chrome** browser
+2. Type `chrome://extensions/` in the address bar
+3. Or: **Menu (⋮)** → **Extensions** → **Manage Extensions**
 
-## 📖 Cách sử dụng
+### **Step 3: Enable Developer Mode**
+1. Find the **"Developer mode"** toggle in the **top right corner**
+2. **Turn ON** Developer mode
+3. You'll see 3 new buttons appear: "Load unpacked", "Pack extension", "Update"
 
-1. Truy cập https://www.reddit.com/
-2. Bạn sẽ thấy một button tròn màu cam với icon camera ở góc phải dưới màn hình
-3. Click vào button để hiển thị alert chứa title của trang web
+### **Step 4: Load Extension** ⚠️ **IMPORTANT**
+1. Click the **"Load unpacked"** button
+2. **Select the correct root folder** containing the `manifest.json` file
+   - ✅ **CORRECT**: Select the `reddit-extension/` folder (contains manifest.json)
+   - ❌ **WRONG**: Select parent folder or subfolder
+3. Click **"Select Folder"**
 
-## 📁 Cấu trúc project
+### **Step 5: Confirm Installation**
+- Extension will appear in the list with name **"Reddit Content Extractor"**
+- Extension icon will display on the toolbar
+- Status shows **"Enabled"**
 
-```
-reddit-capture-extension/
-├── manifest.json          # Cấu hình chính của extension
-├── content.js             # Script chạy trên Reddit
-├── styles.css             # CSS cho button floating
-├── popup.html             # Popup của extension
-├── icons/                 # Thư mục chứa icons
-└── README.md             # File hướng dẫn này
-```
+## 📖 Usage Guide
 
-## 🔧 Tùy chỉnh
+### **How to use:**
+1. **Visit** https://www.reddit.com/
+2. **Open any post** with comments
+3. **Find 3 circular buttons** in the bottom right corner of the screen:
 
-### Thay đổi vị trí button
-Trong file `styles.css`, sửa properties:
-```css
-.capture-button {
-  bottom: 20px;  /* Khoảng cách từ đáy */
-  right: 20px;   /* Khoảng cách từ phải */
-}
-```
+### **📋 Copy Button (Green - Top)**
+- **Function**: Copy Markdown content to clipboard
+- **When to use**: When you want to quickly paste into another document
+- **Output**: Markdown text in clipboard
+- **Advantages**: 
+  - Quick, no file creation
+  - Paste directly into Notion, GitHub, Discord...
+  - Preserves Markdown formatting
 
-### Thay đổi màu sắc
-```css
-.capture-button {
-  background: linear-gradient(135deg, #your-color1, #your-color2);
-}
-```
+### **MD Button (Blue - Middle)**  
+- **Function**: Download Markdown file (.md)
+- **When to use**: When you want long-term storage or documentation
+- **Output**: .md file named after the post title
+- **Advantages**:
+  - Permanent storage
+  - Readable on any Markdown viewer
+  - Beautiful format with hierarchical headers
 
-### Thêm trang web khác
-Trong `manifest.json`, thêm URL vào `matches`:
-```json
-"matches": [
-  "https://www.reddit.com/*",
-  "https://your-website.com/*"
-]
-```
-
-## 🐛 Troubleshooting
-
-**Button không xuất hiện:**
-- Kiểm tra bạn đang ở đúng trang Reddit
-- Refresh trang web
-- Kiểm tra Console (F12) xem có lỗi không
-
-**Extension không hoạt động:**
-- Kiểm tra extension đã được enable
-- Refresh trang và thử lại
-- Kiểm tra permissions trong Chrome
-
-## 📝 Phát triển thêm
-
-Để mở rộng tính năng:
-
-1. **Capture screenshot:** Sử dụng `chrome.tabs.captureVisibleTab()`
-2. **Lưu nội dung:** Thêm `storage` permission
-3. **Upload cloud:** Tích hợp API upload
-4. **Capture specific elements:** Sử dụng DOM selection
-
-## 🔒 Permissions
-
-Extension chỉ yêu cầu permission tối thiểu:
-- `activeTab`: Để đọc title của tab hiện tại
-
-## 📄 License
-
-MIT License - Tự do sử dụng và chỉnh sửa.
+### **JSON Button (Orange - Bottom)**
+- **Function**: Download JSON file (.json) 
+- **When to use**: When you need to process data with code
+- **Output**: .json file with complete data structure
+- **Advantages**:
+  - Machine-readable format
+  - Preserves 100% of information
+  - Easy to parse with programming languages

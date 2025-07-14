@@ -1,4 +1,4 @@
-/* Styles cho floating capture button */
+/* Styles cho floating JSON download button */
 .capture-button {
   position: fixed;
   bottom: 20px;
@@ -15,14 +15,40 @@
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  font-size: 24px;
+  font-size: 12px;
+  font-weight: bold;
   color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Styles cho MD button */
+.md-button {
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  box-shadow: 0 4px 20px rgba(74, 144, 226, 0.3);
+}
+
+/* Styles cho Copy button */
+.copy-button {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  box-shadow: 0 4px 20px rgba(40, 167, 69, 0.3);
 }
 
 .capture-button:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 25px rgba(255, 69, 0, 0.4);
   background: linear-gradient(135deg, #ff6b35, #ff4500);
+}
+
+.md-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(74, 144, 226, 0.4);
+  background: linear-gradient(135deg, #357abd, #4a90e2);
+}
+
+.copy-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(40, 167, 69, 0.4);
+  background: linear-gradient(135deg, #20c997, #28a745);
 }
 
 .capture-button:active {
