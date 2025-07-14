@@ -1,0 +1,79 @@
+/* Styles cho floating capture button */
+.capture-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #ff4500, #ff6b35);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(255, 69, 0, 0.3);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 24px;
+  color: white;
+}
+
+.capture-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(255, 69, 0, 0.4);
+  background: linear-gradient(135deg, #ff6b35, #ff4500);
+}
+
+.capture-button:active {
+  transform: scale(0.95);
+}
+
+/* Icon capture sử dụng CSS */
+.capture-icon {
+  width: 28px;
+  height: 28px;
+  position: relative;
+}
+
+.capture-icon::before {
+  content: "📷";
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Alternative icon using CSS shapes */
+.capture-icon-alt {
+  width: 24px;
+  height: 18px;
+  border: 2px solid white;
+  border-radius: 3px;
+  position: relative;
+}
+
+.capture-icon-alt::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 4px;
+  background: white;
+  border-radius: 2px 2px 0 0;
+}
+
+.capture-icon-alt::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border: 2px solid white;
+  border-radius: 50%;
+}

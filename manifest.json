@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Reddit Capture Extension",
+  "version": "1.0",
+  "description": "Extension để capture nội dung trên Reddit với button floating",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.reddit.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "icons": {
+    "16": "icons/iconR.png",
+    "48": "icons/iconR.png",
+    "128": "icons/iconR.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Reddit Capture"
+  }
+}
