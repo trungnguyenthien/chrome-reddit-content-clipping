@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <style>
     body {
-      width: 300px;
+      width: 320px;
       padding: 20px;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
@@ -31,6 +31,7 @@
       padding: 15px;
       border-radius: 8px;
       border-left: 4px solid #ff4500;
+      margin-bottom: 15px;
     }
     
     .info h3 {
@@ -46,8 +47,27 @@
       line-height: 1.4;
     }
     
+    .feature-list {
+      background: #fff3cd;
+      padding: 12px;
+      border-radius: 6px;
+      border-left: 4px solid #ffc107;
+      margin-bottom: 15px;
+    }
+    
+    .feature-list h4 {
+      margin: 0 0 8px 0;
+      font-size: 13px;
+      color: #856404;
+    }
+    
+    .feature-list p {
+      margin: 3px 0;
+      font-size: 11px;
+      color: #856404;
+    }
+    
     .status {
-      margin-top: 15px;
       padding: 10px;
       background: #e8f5e8;
       border-radius: 5px;
@@ -55,23 +75,89 @@
       font-size: 12px;
       color: #2d5a2d;
     }
+    
+    .button-info {
+      background: #e3f2fd;
+      padding: 10px;
+      border-radius: 6px;
+      border-left: 4px solid #2196f3;
+      margin-bottom: 15px;
+    }
+    
+    .button-info h4 {
+      margin: 0 0 6px 0;
+      font-size: 12px;
+      color: #1565c0;
+    }
+    
+    .button-row {
+      display: flex;
+      align-items: center;
+      margin: 4px 0;
+    }
+    
+    .button-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      margin-right: 8px;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .copy-btn { background: linear-gradient(135deg, #28a745, #20c997); }
+    .md-btn { background: linear-gradient(135deg, #4a90e2, #357abd); }
+    .json-btn { background: linear-gradient(135deg, #ff4500, #ff6b35); }
+    
+    .button-text {
+      font-size: 11px;
+      color: #1565c0;
+    }
   </style>
 </head>
 <body>
   <div class="header">
-    <div class="title">Reddit Capture</div>
+    <div class="title">Reddit Content Extractor</div>
     <div class="subtitle">Version 1.0</div>
   </div>
   
   <div class="info">
-    <h3>🎯 Hướng dẫn sử dụng:</h3>
-    <p>• Truy cập https://www.reddit.com/</p>
-    <p>• Tìm button tròn 📷 ở góc phải dưới</p>
-    <p>• Click để capture title trang web</p>
+    <h3>🎯 How to use:</h3>
+    <p>• Visit https://www.reddit.com/</p>
+    <p>• Open any post with comments</p>
+    <p>• Find 3 buttons on bottom right corner</p>
+  </div>
+  
+  <div class="button-info">
+    <h4>🔧 Available Buttons:</h4>
+    <div class="button-row">
+      <div class="button-icon copy-btn">📋</div>
+      <div class="button-text">Copy Markdown to clipboard</div>
+    </div>
+    <div class="button-row">
+      <div class="button-icon md-btn">MD</div>
+      <div class="button-text">Download Markdown file (.md)</div>
+    </div>
+    <div class="button-row">
+      <div class="button-icon json-btn">JSON</div>
+      <div class="button-text">Download JSON file (.json)</div>
+    </div>
+  </div>
+  
+  <div class="feature-list">
+    <h4>📋 Extracted Content:</h4>
+    <p>• Post title and content</p>
+    <p>• All comments with nested replies</p>
+    <p>• Author names and comment structure</p>
+    <p>• Hierarchical format preservation</p>
   </div>
   
   <div class="status">
-    ✅ Extension đã sẵn sàng hoạt động
+    ✅ Extension is ready to extract Reddit content
   </div>
 </body>
 </html>
